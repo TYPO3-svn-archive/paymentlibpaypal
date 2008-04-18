@@ -1,0 +1,22 @@
+<paymentmethods>
+	<paypal_webpayment_standard type="array">
+		<label>LLL:EXT:paymentlib_paypal/locallang.php:webpayment_standard</label>
+		<type>directdebit</type>
+		<iconpath>EXT:paymentlib_paypal/res/paypal_standard.gif</iconpath>
+	</paypal_webpayment_standard>
+	<paypal_webpayment_euro type="array">
+		<label>LLL:EXT:paymentlib_paypal/locallang.php:webpayment_euro</label>
+		<type>directdebit</type>
+		<iconpath>EXT:paymentlib_paypal/res/paypal_euro.gif</iconpath>
+	</paypal_webpayment_euro>
+	<paypal_webpayment_international type="array">
+		<label>LLL:EXT:paymentlib_paypal/locallang.php:webpayment_international</label>
+		<type>directdebit</type>
+		<iconpath>EXT:paymentlib_paypal/res/paypal_international.gif</iconpath>
+	</paypal_webpayment_international>
+	<paypal_webpayment_poundssterling type="array">
+		<label>LLL:EXT:paymentlib_paypal/locallang.php:webpayment_poundssterling</label>
+		<type>directdebit</type>
+		<iconpath>EXT:paymentlib_paypal/res/paypal_poundssterling.gif</iconpath>
+	</paypal_webpayment_poundssterling>
+</paymentmethods>

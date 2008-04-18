@@ -1,0 +1,64 @@
+# cat = Paypal/general; type=string; label=Your business e-mail: Here you should set your e-mail-address which you have entered for account registration at Paypal. Typically this e-mail identifies your business at Paypal
+business = john@doe.com
+# cat = Paypal/general; type=string; label=Paypal url: This url is used to send the data to Paypal for processing.
+formActionURI = https://www.Paypal.com/cgi-bin/webscr
+# cat = Paypal/general; type=string; label=Return url on cancel: Set here the url to which a user will be redirected if he cancels his payment via Paypal
+cancelUrl =
+# cat = Paypal/general;  type=options[Post=2,Get=1]; label=Submit method: Sets the submit method for sending the data to Paypal
+submitMode = 2
+# cat = Paypal/general; type=options[Prompt (optional input)=0,Do not ask=1,Required=2]; label=Delivery address: Here you can set, if a customer should enter a delivery or not
+enableShippingaddress = 0
+# cat = Paypal/general; type=options[Prompt (optional input)=0,Do not ask=1]; label=Prompt for customer note: This tells Paypal whether a note could be set by the customer to the payment or not
+enablePaymentNote=0
+# cat = Paypal/general; type=string; label=Header for customer note: Here you can set a header to the customer note which will be shown on Paypal. This requires that customer note is enabled to take affect
+notLabel = Put your header for notes here
+# cat = Paypal/payment; type=boolean; label=Send customer data: Check this if you want to send the customer informations to Paypal. This is typically used to prefill fields at Paypal
+sendPersonInfo = 1
+# cat = Paypal/payment; type=boolean; label=Create new Paypal users: Check this if a user should be redirected to account-setup at Paypal if he doesn't have a Paypal-account
+createNewUser = 1
+# cat = Paypal/payment; type=string; label=User fields: Here you should setup the userfields which will be send to Paypal. Please insert the needed Paypal fields for user in a commaseparated list
+prepopulatingFields = email,first_name,last_name,address1,city,state,zip,country,lc
+# cat = Paypal/payment; type=boolean; label=Address overwrite: Overwrite the customers stored address data at Paypal
+overwriteAddress = 1
+# cat = Paypal/payment; type=boolean; label=Send basket: Check if you want the basket content to be sent to Paypal. If you send the basket, all containing articles will be shown on Paypal
+sendBasket = 1
+# cat = Paypal/payment; type=string; label=Number format (ISO3-Code): Decides which currency format is used. Typical Paypal uses us-format with "." as decimalpoint and "," as thousandseperator. This is not meant to set the used currency in the basket. Just for priceformatting use only.
+basketCurrency = EUR
+# cat = Paypal/basket; type="string; label=Set basket fields: Type in here the basket article fields which should be send. Commaseperated list, Paypal-fieldnames
+articleFields = item_name,item_number,amount,quantity,shipping,tax
+# cat = Paypal/basket; type=boolean; label=Send total tax: Decides whether the total tax of the basket should be send or not
+sendTaxAmount = 1
+# cat = Paypal/basket; type=boolean; label=Send total shipping: Decides whether the total shipping of the basket should be send or not
+sendShipping = 1
+# cat = Paypal/basket; type=boolean; label=Send total handling fee: Decides whether the total handling of the basket fee should be send or not
+sendHandlingFee = 1
+# cat = Paypal/basket; type=string; label=Basket name: This string is used to generate a uniqe Paypal basketname to identify the submitted basket.
+item_name = ###ORDERID###
+# cat = Paypal/basket; type=string; label=Invoice number: This gives you the posibility to set the invoice number as a static value or as the real orderuid. Typically this shoulb be set to ###ORDERID### which means that the actual orderuid is used as invoice number. This is only as passthrough field and will not be processed by Paypal
+invoiceVar = ###ORDERID###
+#cat = Paypal/layout; type=string; label=Shop logo: Url where Paypal will find your company logo. This logo will be shown to your customer through processing the payment instead of your business name
+logo = <url to your company logo>
+#cat = Paypal/layout; type=cbt; label=Continue button label: This text will be shown on the continue buttons at Paypal
+continueButton =
+#cat = Paypal/layout; type=boolean; label=Set layout; Check this if you want to style your Paypal site
+setLayout = 0
+#cat = Paypal/layout; type=string; label=Stored page style: If you have defined a page style for your payment pages at Paypal you can set the name here. If you set this, the named page style will be used. 
+layoutPageStyle=
+#cat = Paypal/layout; type=string; label=Header image: Here you can set an image url to an image which will be shown in the header of the Paypal sites. Validate image format is 750x90 pixels
+cppHeaderImage=
+# cat = Paypal/layout; type=string; label=Header back color: Set here the background color for the header of your payment sites. Format: 6 char hex color code
+cppHeaderBackColor=
+# cat = Paypal/layout; type=string; label=Header border color: Set here the border color for the header. Format: 6 char hex color code
+cppHeaderBorderColor=
+# cat = Paypal/layout; type=string; label=Background color for payment site: This sets the background color for the site below the header. Format: 6 char hex color code
+cppPayFlowColor =
+# cat = Paypal/layout; type=options[White=0,Black=1]; label=Background color for sites: This is used to set the background color of your payment sites
+pageBackgroundColor =
+# cat = Paypal/pdt-synchronisation; type=string; label=Authenticate token: This token must be setup directly in your Paypal account and is needed for receiving informations about processed transaction. If this token is not set it is not possible to check if any transaction was finished successfully. This field is a must.
+authToken = <Needed field>
+# cat = Paypal/pdt-synchronisation; type=string; label=Request url for pdt-synchronisation: This is the request url, which will be called to verify transactions.
+syncUri = www.Paypal.com/cgi-bin/webscr
+# cat = Paypal/pdt-synchronisation; type=options[HTTP=http,HTTPS=https]; label=Request port for pdt-synchronisation: This decides through which port an pdt-synchronisation will be send. If you choose 'HTTPS' your server must support 'SSL' and port 443 must be configured to handle those requests
+syncScheme = http
+# cat = Paypal/extension-settings; type=string; label=Alternative address map: Behavior like 'Alternative article map', just for the information fields about the customer (invoice Address)
+personInfoMap =
